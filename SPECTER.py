@@ -44,7 +44,7 @@ all_files = os.listdir(path)
 for i in range(0,  len(all_files)):
     with open(path + '\\' + all_files[i], 'r', encoding="utf-8") as file:
         data = file.read().replace('\n', '')
-        for j in range(0, len(all_files)):
+        for j in range(i+1, len(all_files)): # J should start at i + 1 instead of 0 to avoid looping through all files again, and also comparing file by itself 
             with open(path + '\\' + all_files[j], 'r', encoding="utf-8") as file:
                 data1 = file.read().replace('\n', '')
                 SAMPLE_PAPERS = [
